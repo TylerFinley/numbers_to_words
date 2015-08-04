@@ -93,7 +93,26 @@ class Fixnum
                  digit1.fetch(char[6].to_i) + " hundred " +
                  digit2.fetch(char[7].to_i) + ' ' +
                  digit1.fetch(char[8].to_i)
-        end
+        elsif value.length() == 10
+           char = value.split("")
+           word = digit1.fetch(char[0].to_i) + ' billion ' +
+                digit1.fetch(char[1].to_i) + " hundred " +
+                 digit2.fetch(char[2].to_i) + ' ' + digit1.fetch(char[3].to_i) + ' million ' +
+                 digit1.fetch(char[4].to_i) + ' hundred ' +
+                 digit2.fetch(char[5].to_i) + ' ' + digit1.fetch(char[6].to_i) + ' thousand ' +
+                 digit1.fetch(char[7].to_i) + " hundred " +
+                 digit2.fetch(char[8].to_i) + ' ' +
+                 digit1.fetch(char[9].to_i)
+        elsif value.length() == 11
+          char = value.split("")
+          word = digits_to_20.fetch((char[0] + char[1]).to_i) + ' billion ' +
+                digit1.fetch(char[2].to_i) + " hundred " +
+                digit2.fetch(char[3].to_i) + ' ' + digit1.fetch(char[4].to_i) + ' million ' +
+                digit1.fetch(char[5].to_i) + ' hundred ' +
+                digit2.fetch(char[6].to_i) + ' ' + digit1.fetch(char[7].to_i) + ' thousand ' +
+                digit1.fetch(char[8].to_i) + " hundred " +
+                digit2.fetch(char[9].to_i) + ' ' +
+                digit1.fetch(char[10].to_i)
     end
     word
   end

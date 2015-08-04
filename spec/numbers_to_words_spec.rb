@@ -36,4 +36,10 @@ describe('Fixnum#numbers_to_words') do
   it('takes a 9 digit and converts to word') do
     expect((123456789).numbers_to_words()).to(eq('one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine'))
   end
+  it('takes a 10 digit and converts to word') do
+    expect((1234567891).numbers_to_words()).to(eq('one billion two hundred thirty four million five hundred sixty seven thousand eight hundred ninety one'))
+  end
+  it('takes a 11 digit and converts to word') do
+    expect((12345678921).numbers_to_words()).to(eq('twelve billion three hundred fourty five million six hundred seventy eight thousand nine hundred twenty one'))
+  end
 end
