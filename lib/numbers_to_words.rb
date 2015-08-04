@@ -61,6 +61,14 @@ class Fixnum
                  digit1.fetch(char[2].to_i) + " hundred " +
                  digit2.fetch(char[3].to_i) + ' ' +
                  digit1.fetch(char[4].to_i)
+        elsif value.length() == 6
+            char = value.split("")
+
+            word =digit1.fetch(char[0].to_i) + ' hundred ' +
+                 digit2.fetch(char[1].to_i) + ' ' + digit1.fetch(char[2].to_i) + ' thousand ' +
+                 digit1.fetch(char[3].to_i) + " hundred " +
+                 digit2.fetch(char[4].to_i) + ' ' +
+                 digit1.fetch(char[5].to_i)
         end
     end
     word

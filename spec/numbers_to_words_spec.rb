@@ -24,4 +24,7 @@ describe('Fixnum#numbers_to_words') do
   it('takes a five digit and converts to word') do
     expect((12345).numbers_to_words()).to(eq('twelve thousand three hundred fourty five'))
   end
+  it('takes a 6 digit and converts to word') do
+    expect((123456).numbers_to_words()).to(eq('one hundred twenty three thousand four hundred fifty six'))
+  end
 end
