@@ -42,8 +42,24 @@ class Fixnum
           word = digit1.fetch(self)
         elsif value.length() == 2
           char = value.split("")
-          word = digit2.fetch(char[1].to_i) + " " + digit1.fetch(char[0].to_i)
-
+          word = digit2.fetch(char[0].to_i) + " " + digit1.fetch(char[1].to_i)
+        elsif value.length() == 3
+          char = value.split("")
+          word = digit1.fetch(char[0].to_i) + " hundred " +
+                 digit2.fetch(char[1].to_i) + ' ' +
+                 digit1.fetch(char[2].to_i)
+        elsif value.length() == 4
+            char = value.split("")
+            word =digit1.fetch(char[0].to_i) + ' thousand ' +
+                  digit1.fetch(char[1].to_i) + " hundred " +
+                 digit2.fetch(char[2].to_i) + ' ' +
+                 digit1.fetch(char[3].to_i)
+        elsif value.length() == 5
+           char = value.split("")
+           word =digit1.fetch(char[0].to_i) + ' thousand ' +
+                 digit1.fetch(char[1].to_i) + " hundred " +
+                 digit2.fetch(char[2].to_i) + ' ' +
+                 digit1.fetch(char[3].to_i)
         end
     end
     word
