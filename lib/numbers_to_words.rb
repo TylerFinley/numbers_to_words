@@ -25,24 +25,26 @@ class Fixnum
               19 => 'nineteen',
               20 => 'twenty'}
 
-    # digit2 = {10 => 'ten',
-    #           20 => 'twenty',
-    #           30 => 'thirty',
-    #           40 => 'fourty',
-    #           50 => 'fifty',
-    #           60 => 'sixty',
-    #           70 => 'seventy',
-    #           80 => 'eighty',
-    #           90 => 'ninety'}
+    digit2 = {2 => 'twenty',
+              3 => 'thirty',
+              4 => 'fourty',
+              5 => 'fifty',
+              6 => 'sixty',
+              7 => 'seventy',
+              8 => 'eighty',
+              9 => 'ninety'}
+
     if self >= 10 && self <= 20
       word = digits_to_20.fetch(self)
     else
       value = self.to_s
-      value.each_char do |char|
         if value.length() == 1
-          word = digit1.fetch(char.to_i)
+          word = digit1.fetch(self)
+        elsif value.length() == 2
+          char = value.split("")
+          word = digit2.fetch(char[1].to_i) + " " + digit1.fetch(char[0].to_i)
+
         end
-      end
     end
     word
   end
